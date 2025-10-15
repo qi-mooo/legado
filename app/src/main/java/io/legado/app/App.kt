@@ -121,10 +121,8 @@ class App : Application() {
             if (AppConfig.syncBookProgress) {
                 AppWebDav.downloadAllBookProgress()
             }
-            //自动启动 Web 服务
-            if (getPrefBoolean(PreferKey.webService, false)) {
-                WebService.start(this@App)
-            }
+            //自动启动 Web 服务（强制启动，不检查配置）
+            WebService.start(this@App)
         }
     }
 
